@@ -39,3 +39,7 @@ Engineering quality improves by turning merge decisions into a measurable policy
 - **State substrate**: consensus-tools board artifacts
 - **Primary output**: merge decision artifact + updated persona set
 - **Primary benefit**: safer, more consistent release governance
+
+## Tool-call boundary
+
+To avoid orchestration drift, this skill routes board operations through the consensus-interact contract surface (directly or via guard-core wrappers). This preserves a single governance interaction model while allowing domain-specific decision logic.
