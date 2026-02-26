@@ -1,42 +1,38 @@
 ---
 name: consensus-code-merge-guard
-description: Open-source Consensus.Tools skill for governed AI decisions with board-native artifacts, strict JSON contracts, and deterministic policy behavior.
+description: Persona-weighted merge governance for AI-assisted engineering. Evaluates PR risk (tests, security markers, reliability signals), returns MERGE/BLOCK/REVISE decisions, and records board-native audit artifacts.
 homepage: https://github.com/kaicianflone/consensus-code-merge-guard
 source: https://github.com/kaicianflone/consensus-code-merge-guard
 ---
 
 # consensus-code-merge-guard
 
-This skill is part of the Consensus.Tools ecosystem and is designed for production-grade agent governance.
+`consensus-code-merge-guard` turns code merge approval into a governed, auditable decision.
 
-## Why this skill exists
+## What this skill does
 
-Most agent systems fail because a single model decides and executes without explicit arbitration. This skill addresses that by applying consensus-style controls:
+- consumes PR/change summary input
+- runs persona-weighted vote arbitration
+- enforces hard constraints (e.g., tests/security flags)
+- maps to engineering decision states: `MERGE | BLOCK | REVISE`
+- writes decision and updated persona artifacts to board state
 
-- structured multi-perspective evaluation
-- hard-block safety checks
-- deterministic aggregation and replayable outputs
-- board-native artifact persistence for auditing
+## Why this matters
 
-## Core capabilities
+CI passing does not guarantee risk-aware merge quality. Consensus review reduces silent failure propagation into production.
 
-- strict input/output JSON contracts for pipeline integration
-- deterministic policy evaluation where possible
-- idempotent retry behavior to avoid duplicate side effects
-- versioned artifacts written to board ledger history
+## Ecosystem role
 
-## Stack assumptions
+Uses the same consensus substrate as other guards, enabling cross-domain governance with comparable metrics.
 
-- built to compose with consensus-interact workflows
-- uses consensus-tools board/job/submission primitives
-- designed to integrate with persona-generator persona_set artifacts
+## Useful for
+
+- autonomous or semi-autonomous merge pipelines
+- high-risk repos needing policy checks
+- repeatable release governance with artifact history
 
 ## Quick start
 
-Use the repo examples and run script to execute locally.
-
-## Expected outcomes
-
-- a decision/result artifact persisted to board state
-- optional updated persona_set artifact for adaptive governance
-- machine-parseable output suitable for automation systems
+```bash
+node --import tsx run.js --input ./examples/input.json
+```
