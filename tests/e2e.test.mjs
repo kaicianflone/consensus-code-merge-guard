@@ -5,3 +5,11 @@ const input={ board_id:'board_test', change_summary:{repo:'x/y',pr_id:'1',title:
 test('e2e', async()=>{ const out=await handler(input,{statePath:tmp()}); assert.equal(Boolean(out.error),false); assert.equal(out.board_writes.length,2); });
 test('failing tests => BLOCK', async()=>{ const out=await handler(input,{statePath:tmp()}); assert.equal(out.final_decision,'BLOCK'); });
 test('idempotent retry', async()=>{ const s=tmp(); const a=await handler(input,{statePath:s}); const b=await handler(input,{statePath:s}); assert.equal(a.decision_id,b.decision_id); });
+
+
+test('example input json stays executable', async()=>{
+  const example = JSON.parse(fs.readFileSync(new URL('../examples/input.json', import.meta.url), 'utf8'));
+  if (!example.board_id) example.board_id = 'board_test';
+  const out = await handler(example,{statePath:tmp()});
+  assert.equal(Boolean(out.error), false);
+});
