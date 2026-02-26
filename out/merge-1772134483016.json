@@ -1,0 +1,146 @@
+{
+  "board_id": "board_demo",
+  "decision_id": "1cd1b237-10f4-41b9-9be7-51b14f8ff70a",
+  "timestamp": "2026-02-26T19:34:43.002Z",
+  "persona_set_id": "b8f91d1e-6a6e-45fd-bd54-90e47a99aa38",
+  "votes": [
+    {
+      "persona_id": "persona_1",
+      "name": "Threat Modeler",
+      "reputation_before": 0.55,
+      "vote": "NO",
+      "confidence": 0.9,
+      "reasons": [
+        "Merge risk detected"
+      ],
+      "red_flags": [
+        "TESTS_FAILED",
+        "SECURITY_FLAG"
+      ],
+      "suggested_edits": [
+        "Fix tests/security findings before merge"
+      ]
+    },
+    {
+      "persona_id": "persona_2",
+      "name": "Compliance Skeptic",
+      "reputation_before": 0.64,
+      "vote": "NO",
+      "confidence": 0.9,
+      "reasons": [
+        "Merge risk detected"
+      ],
+      "red_flags": [
+        "TESTS_FAILED",
+        "SECURITY_FLAG"
+      ],
+      "suggested_edits": [
+        "Fix tests/security findings before merge"
+      ]
+    },
+    {
+      "persona_id": "persona_3",
+      "name": "Data Minimizer",
+      "reputation_before": 0.73,
+      "vote": "NO",
+      "confidence": 0.9,
+      "reasons": [
+        "Merge risk detected"
+      ],
+      "red_flags": [
+        "TESTS_FAILED",
+        "SECURITY_FLAG"
+      ],
+      "suggested_edits": [
+        "Fix tests/security findings before merge"
+      ]
+    },
+    {
+      "persona_id": "persona_4",
+      "name": "Abuse Analyst",
+      "reputation_before": 0.81,
+      "vote": "NO",
+      "confidence": 0.9,
+      "reasons": [
+        "Merge risk detected"
+      ],
+      "red_flags": [
+        "TESTS_FAILED",
+        "SECURITY_FLAG"
+      ],
+      "suggested_edits": [
+        "Fix tests/security findings before merge"
+      ]
+    },
+    {
+      "persona_id": "persona_5",
+      "name": "Policy Enforcer",
+      "reputation_before": 0.9,
+      "vote": "NO",
+      "confidence": 0.9,
+      "reasons": [
+        "Merge risk detected"
+      ],
+      "red_flags": [
+        "TESTS_FAILED",
+        "SECURITY_FLAG"
+      ],
+      "suggested_edits": [
+        "Fix tests/security findings before merge"
+      ]
+    }
+  ],
+  "aggregation": {
+    "method": "WEIGHTED_APPROVAL_VOTE",
+    "weighted_yes": 0,
+    "weighted_no": 1,
+    "weighted_rewrite": 0,
+    "hard_block": true,
+    "rationale": [
+      "hard_block detected"
+    ]
+  },
+  "final_decision": "BLOCK",
+  "required_actions": [
+    "Address failing checks before merge"
+  ],
+  "board_writes": [
+    {
+      "type": "decision",
+      "success": true,
+      "ref": "sub_72ba1137-44c5-4a7f-9638-16e1f6f191cf"
+    },
+    {
+      "type": "persona_set",
+      "success": true,
+      "ref": "sub_48faecce-4017-4d33-885a-b842f6621f16"
+    }
+  ],
+  "persona_updates": [
+    {
+      "persona_id": "persona_1",
+      "reputation_after": 0.57,
+      "delta": 0.02
+    },
+    {
+      "persona_id": "persona_2",
+      "reputation_after": 0.66,
+      "delta": 0.02
+    },
+    {
+      "persona_id": "persona_3",
+      "reputation_after": 0.75,
+      "delta": 0.02
+    },
+    {
+      "persona_id": "persona_4",
+      "reputation_after": 0.83,
+      "delta": 0.02
+    },
+    {
+      "persona_id": "persona_5",
+      "reputation_after": 0.92,
+      "delta": 0.02
+    }
+  ]
+}
