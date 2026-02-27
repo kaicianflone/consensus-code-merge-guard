@@ -3,6 +3,8 @@ name: consensus-code-merge-guard
 description: Persona-weighted merge governance for AI-assisted engineering. Evaluates PR risk (tests, security markers, reliability signals), returns MERGE/BLOCK/REVISE decisions, and records board-native audit artifacts.
 homepage: https://github.com/kaicianflone/consensus-code-merge-guard
 source: https://github.com/kaicianflone/consensus-code-merge-guard
+metadata:
+  {"openclaw": {"requires": {"bins": ["node", "npm", "tsx"]}}}
 ---
 
 # consensus-code-merge-guard
