@@ -4,7 +4,7 @@ description: Persona-weighted merge governance for AI-assisted engineering. Eval
 homepage: https://github.com/kaicianflone/consensus-code-merge-guard
 source: https://github.com/kaicianflone/consensus-code-merge-guard
 metadata:
-  {"openclaw": {"requires": {"bins": ["node", "tsx"]}}}
+  {"openclaw": {"requires": {"bins": ["node", "tsx"], "env": ["OPENAI_API_KEY"]}}}
 ---
 
 # consensus-code-merge-guard
