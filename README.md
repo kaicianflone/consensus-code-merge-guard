@@ -1,34 +1,42 @@
 # consensus-code-merge-guard
 
-Consensus-based merge governance for pull requests and code integration decisions.
+Deterministic merge governance for pull requests and release branches.
 
-`consensus-code-merge-guard` reviews a proposed merge through persona-weighted policy checks and returns:
+`consensus-code-merge-guard` evaluates a proposed merge and returns:
 
 - `ALLOW`
 - `BLOCK`
 - `REQUIRE_REWRITE`
 
-## What it protects
+so merge decisions are policy-backed, auditable, and replayable.
 
-- production stability
+## What this package protects
+
+- production reliability
 - security posture
-- reliability of CI/CD workflows
-- code quality under delivery pressure
+- CI discipline
+- release quality under shipping pressure
 
-## Core features
+## Evaluation dimensions
 
-- strict schema validation
-- deterministic decision semantics via `consensus-guard-core`
-- policy-aware weighted voting
-- idempotent retries for safe re-runs
-- board-native artifact trail for audit and replay
+Common policy lanes include:
+- security findings severity
+- test/CI health
+- rollback readiness
+- performance/regression risk
+- unresolved reviewer or policy gates
 
-## Typical signals
+## Core mechanics
 
-- failing checks/tests
-- unresolved high-risk findings
-- missing rollback or release notes
-- policy violations in security/reliability/performance lanes
+- strict schema validation (unknown fields rejected)
+- persona-weighted voting or external vote ingestion
+- deterministic weighted aggregation via `consensus-guard-core`
+- idempotency keys for retry-safe workflows
+- board-native decision artifacts for traceability
+
+## Typical integration point
+
+Run this guard after CI checks are available and before merge automation executes.
 
 ## Quick start
 
@@ -43,6 +51,7 @@ node --import tsx run.js --input ./examples/input.json
 npm test
 ```
 
-## Continuous improvement
+## Related docs
 
-See `AI-SELF-IMPROVEMENT.md` for improvement loops and guard evolution patterns.
+- `SKILL.md`
+- `AI-SELF-IMPROVEMENT.md`
