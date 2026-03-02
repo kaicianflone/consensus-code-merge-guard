@@ -54,7 +54,6 @@ Uses the same consensus substrate as other guards, enabling cross-domain governa
 
 - runtime binaries: `node`, `tsx`
 - network calls: none in the guard decision path itself
-- credentials: none required
 - filesystem writes: board/state artifacts under the configured consensus state path
 
 ## Dependency trust model
