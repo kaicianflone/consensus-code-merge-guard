@@ -1,7 +1,7 @@
 ---
 name: consensus-code-merge-guard
 description: Persona-weighted merge governance for AI-assisted engineering. Evaluates PR risk (tests, security markers, reliability signals), returns MERGE/BLOCK/REVISE decisions, and records board-native audit artifacts.
-version: 1.1.13
+version: 1.1.14
 homepage: https://github.com/kaicianflone/consensus-code-merge-guard
 source: https://github.com/kaicianflone/consensus-code-merge-guard
 upstream:
@@ -26,9 +26,6 @@ metadata:
     install:
       - kind: node
         package: consensus-code-merge-guard
-        bins:
-          - node
-          - tsx
 ---
 
 # consensus-code-merge-guard
@@ -69,6 +66,12 @@ Uses the same consensus substrate as other guards, enabling cross-domain governa
 - `consensus-guard-core` is the first-party consensus package used in guard execution
 - versions are semver-pinned in `package.json` for reproducible installs
 - this skill does not request host-wide privileges and does not mutate other skills
+
+## Install (registry)
+
+```bash
+npm i consensus-code-merge-guard
+```
 
 ## Quick start
 
